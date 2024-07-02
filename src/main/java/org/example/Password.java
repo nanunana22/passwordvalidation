@@ -40,8 +40,24 @@ public class Password {
             }
         }
         return hasUpperCase && hasLowerCase;
-
     }
-}
+    //schwache Kennwörter wie "Password1" oder "Aa345678"
+
+    public static boolean checkCommonPassword(String input) {
+        boolean toeasy1 = true;
+        boolean toeasy2 = true;
+        for (int i = 0; i < input.length(); i++) {
+            char check = input.charAt(i);
+            if (check == "Password1".toCharArray()[0]) {
+                toeasy1 = false;
+            }
+            if (check == "Aa345678".toCharArray()[0]) {
+                toeasy2 = false;
+            }
+        }
+        return toeasy1 && toeasy2;
+        }
+    }
+
 
 

@@ -62,7 +62,7 @@ class MainTest {
         assertTrue(password);
     }
     @Test
-    public void addTest_whenOnlyUpperCaseThenreturnfalse(){
+    public void addTest_whenOnlyUpperCaseThenReturnFalse(){
         //Given
         String a = "PASSWORD";
 
@@ -73,7 +73,7 @@ class MainTest {
         assertFalse(password);
     }
     @Test
-    public void addTest_whenOnlyLowerCaseThenreturnfalse(){
+    public void addTest_whenOnlyLowerCaseThenReturnFalse(){
         //Given
         String a = "password";
 
@@ -83,5 +83,26 @@ class MainTest {
         //Then
         assertFalse(password);
     }
+    @Test
+    public void addTest_whenCommonPasswordToEasy1ThenReturnFalse(){
+        //Given
+        String a = "Password1";
 
+        //When
+        boolean password = checkCommonPassword(a);
+
+        //Then
+        assertFalse(password);
+    }
+    @Test
+    public void addTest_whenCommonPasswordToEasy2ThenReturnFalse(){
+        //Given
+        String a = "Aa345678";
+
+        //When
+        boolean password = checkCommonPassword(a);
+
+        //Then
+        assertFalse(password);
+    }
 }
