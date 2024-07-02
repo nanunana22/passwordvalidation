@@ -1,7 +1,5 @@
 package org.example;
-
 import org.junit.jupiter.api.Test;
-
 import static org.example.Password.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -104,5 +102,16 @@ class MainTest {
 
         //Then
         assertFalse(password);
+    }
+    @Test
+    public void addTest_whenSpecialCharacterThenReturnTrue(){
+        //Given
+        String a = "Passwor*";
+
+        //When
+        boolean password = checkSpecial(a);
+
+        //Then
+        assertTrue(password);
     }
 }

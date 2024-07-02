@@ -56,8 +56,26 @@ public class Password {
             }
         }
         return toeasy1 && toeasy2;
-        }
     }
+    public static boolean checkSpecial(String input) {
+        char[] specialCharacters = {'!', '@', '#', '$', '%', '^', '&', '*', '(',
+                ')', '-', '+' };
+        for (char c : specialCharacters) {
+            if (input.contains(Character.toString(c))) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
