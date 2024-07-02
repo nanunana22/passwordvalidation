@@ -2,6 +2,7 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
+import static org.example.Password.checkIfDigits;
 import static org.example.Password.checkLength;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -38,5 +39,16 @@ class MainTest {
 
         //Then
         assertFalse(password);
+    }
+    @Test
+    public void addTest_whenDigitsTruethenreturnTrue(){
+        //Given
+        String a = "Passwor1";
+
+        //When
+        boolean password = checkIfDigits(a);
+
+        //Then
+        assertTrue(password);
     }
 }

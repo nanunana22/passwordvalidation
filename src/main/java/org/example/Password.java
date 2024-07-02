@@ -19,4 +19,14 @@ public class Password {
         }
         return false;
     }
+    public static boolean checkIfDigits(String input) {
+        for (char c : input.toCharArray()) {
+            if (Character.isDigit(c)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
+
+
