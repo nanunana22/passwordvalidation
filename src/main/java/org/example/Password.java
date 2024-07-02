@@ -9,6 +9,7 @@
 
 //Definieren Sie zusätzliche Testmethoden für verschiedene Passwörter. Wählen Sie eine aus Ihrer Sicht optimale Anzahl von Tests.
 package org.example;
+import java.security.SecureRandom;
 
 public class Password {
     public static void main(String[] args) {
@@ -66,6 +67,13 @@ public class Password {
             }
         }
         return false;
+    }
+    public static boolean isSafePassword(String password) {
+        return checkIfDigits(password)
+                && checkUpperLower(password)
+                && checkCommonPassword(password)
+                && !checkSpecial(password);
+
     }
 }
 
