@@ -27,6 +27,21 @@ public class Password {
         }
         return false;
     }
+    public static boolean checkUpperLower(String input) {
+        boolean hasUpperCase = false;
+        boolean hasLowerCase = false;
+        for (int i = 0; i < input.length(); i++) {
+            char check = input.charAt(i);
+            if (Character.isUpperCase(check)) {
+                hasUpperCase = true;
+            }
+            if (Character.isLowerCase(check)) {
+                hasLowerCase = true;
+            }
+        }
+        return hasUpperCase && hasLowerCase;
+
+    }
 }
 
 

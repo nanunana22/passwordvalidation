@@ -2,8 +2,7 @@ package org.example;
 
 import org.junit.jupiter.api.Test;
 
-import static org.example.Password.checkIfDigits;
-import static org.example.Password.checkLength;
+import static org.example.Password.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
@@ -51,4 +50,38 @@ class MainTest {
         //Then
         assertTrue(password);
     }
+    @Test
+    public void addTest_whenUpperAndLowerCaseThenreturnTrue(){
+        //Given
+        String a = "Password";
+
+        //When
+        boolean password = checkUpperLower(a);
+
+        //Then
+        assertTrue(password);
+    }
+    @Test
+    public void addTest_whenOnlyUpperCaseThenreturnfalse(){
+        //Given
+        String a = "PASSWORD";
+
+        //When
+        boolean password = checkUpperLower(a);
+
+        //Then
+        assertFalse(password);
+    }
+    @Test
+    public void addTest_whenOnlyLowerCaseThenreturnfalse(){
+        //Given
+        String a = "password";
+
+        //When
+        boolean password = checkUpperLower(a);
+
+        //Then
+        assertFalse(password);
+    }
+
 }
