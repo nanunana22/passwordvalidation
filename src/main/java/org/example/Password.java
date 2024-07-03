@@ -9,17 +9,20 @@
 
 //Definieren Sie zusätzliche Testmethoden für verschiedene Passwörter. Wählen Sie eine aus Ihrer Sicht optimale Anzahl von Tests.
 package org.example;
-import java.security.SecureRandom;
+
+import java.util.Random;
 
 public class Password {
     public static void main(String[] args) {
     }
-    public static boolean checkLength(String a){
-        if (a.length() == 8){
+
+    public static boolean checkLength(String a) {
+        if (a.length() == 8) {
             return true;
         }
         return false;
     }
+
     public static boolean checkIfDigits(String input) {
         for (char c : input.toCharArray()) {
             if (Character.isDigit(c)) {
@@ -28,6 +31,7 @@ public class Password {
         }
         return false;
     }
+
     public static boolean checkUpperLower(String input) {
         boolean hasUpperCase = false;
         boolean hasLowerCase = false;
@@ -58,9 +62,10 @@ public class Password {
         }
         return toeasy1 && toeasy2;
     }
+
     public static boolean checkSpecial(String input) {
         char[] specialCharacters = {'!', '@', '#', '$', '%', '^', '&', '*', '(',
-                ')', '-', '+' };
+                ')', '-', '+'};
         for (char c : specialCharacters) {
             if (input.contains(Character.toString(c))) {
                 return true;
@@ -68,14 +73,17 @@ public class Password {
         }
         return false;
     }
-    public static boolean isSafePassword(String password) {
+
+    public static boolean isSafe(String password) {
         return checkIfDigits(password)
                 && checkUpperLower(password)
                 && checkCommonPassword(password)
                 && !checkSpecial(password);
-
     }
 }
+
+
+
 
 
 
